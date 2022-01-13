@@ -10,6 +10,15 @@ class Kurir extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'nazivFirme',
+        'pib',
+        'maticniBroj',
+        'adresa',
+        'website'
+    ];
+
+
     public function posiljke()
     {
         return $this->hasMany(Posiljka::class);

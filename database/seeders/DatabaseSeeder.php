@@ -3,6 +3,9 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Database\Seeders\PosiljkaSeeder;
+use Database\Seeders\KurirSeeder;
+use Database\Seeders\PrimalacSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -13,6 +16,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        $kurir = new KurirSeeder;
+        $primalac = new PrimalacSeeder;
+        $posiljka = new PosiljkaSeeder;
+
+        $kurir->run();
+        $primalac->run();
+        $posiljka->run();
     }
 }
